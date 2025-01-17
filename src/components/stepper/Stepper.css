@@ -1,0 +1,180 @@
+.stepper-container {
+  position: relative;
+  z-index: 1;
+}
+
+.stepper-container-box {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.stepper-container-box.vertical {
+  flex-direction: column;
+}
+
+.step-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-content-upper {
+  display: flex;
+  justify-content: space-between;
+}
+.step-content-top {
+  color: #555;
+  opacity: 1;
+  /* background-color: red; */
+  display: flex;
+  align-items: flex-end;
+  /* animation: stepContentOpacityAnimation 0.1s ease-in-out forwards; */
+}
+
+.step-content-bottom {
+  display: flex;
+  color: #555;
+  opacity: 1;
+  /* animation: stepContentOpacityAnimation 0.1s ease-in-out forwards; */
+}
+.step-container:first-child {
+  align-items: flex-start;
+  position: relative;
+}
+.step-container:first-child .step {
+  position: relative;
+}
+.step-container:last-child {
+  align-items: flex-end;
+}
+.step-content-top.active,
+.step-content-bottom.active {
+  opacity: 1;
+}
+
+.step-container.vertical:first-child {
+  align-items: center;
+  position: relative;
+}
+.step-container.vertical:first-child .step {
+}
+.step-container.vertical:last-child {
+  align-items: end;
+}
+.step-container.vertical {
+  flex-direction: row;
+}
+
+.step-inner-content-top {
+  padding: 5px;
+}
+.step-inner-content-bottom {
+  padding: 5px;
+  /* background-color: yellow; */
+}
+.step-content-top.vertical {
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+.step-content-bottom.vertical {
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgray;
+  color: black;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 1;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  /* animation: stepOpacityAnimation 1s ease-out forwards; */
+}
+.step-inner-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step img {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+}
+
+.step.active {
+  background-color: blue;
+  color: white;
+}
+
+.step.completed {
+  background-color: green;
+  color: white;
+}
+
+.progress-bar {
+  height: 1px;
+  width: 100%;
+  background: rgba(115, 115, 115, 0.9);
+  position: absolute;
+  z-index: 1;
+  opacity: 1;
+  /* border-radius: 50px; */
+  /* animation: progressBarOpacityAnimation 1s ease-out forwards; */
+  overflow: hidden;
+}
+
+.progress-bar.vertical {
+  width: 1px;
+  height: 100%;
+  top: 0%;
+  left: 50%;
+}
+.progress-fill {
+  width: 0px;
+  height: 0px;
+  background-color: #000fff;
+  transition:
+    width 0.5s ease-in-out,
+    height 0.5s ease-in-out;
+}
+
+/* Keyframes to animate the progress line */
+/* @keyframes progressBarOpacityAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+/* @keyframes stepOpacityAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+@keyframes stepContentOpacityAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
