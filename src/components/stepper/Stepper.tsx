@@ -88,7 +88,6 @@ const Stepper = (props: StepperType) => {
     // reset active progress bar width and height;
     progressActiveRef.current!.style.width = `0px`;
     progressActiveRef.current!.style.height = `0px`;
-    console.log("stepRef", stepRef);
     if (
       stepContainerRefs?.current &&
       stepContentFirstSideRefs?.current &&
@@ -203,8 +202,6 @@ const Stepper = (props: StepperType) => {
           const activeStepBound = activeStep.getBoundingClientRect();
           const container = containerRef.current!.getBoundingClientRect();
           const topSideHeight = container.top;
-          console.log("activeStepBound.top", activeStepBound.top);
-          console.log("topSideHeight", topSideHeight);
           progressActiveRef.current!.style.height = `${
             activeStepBound.top - topSideHeight
           }px`;

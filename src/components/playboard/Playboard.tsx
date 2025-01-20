@@ -95,8 +95,6 @@ function Playboard() {
         const [key, value] = entryData;
         if (typeof value === "object" && !Array.isArray(value)) {
           if (React.isValidElement(value)) {
-            console.log("value", value);
-
             return `${" ".repeat(indent)}${key}${isRepeat ? ":" : "="}${
               isRepeat ? "" : "{"
             }"ReactNode"${isRepeat ? `,${entriesLength - 1 === idx ? `\n${" ".repeat(indent - 2)}` : ""}` : "}"}`;
